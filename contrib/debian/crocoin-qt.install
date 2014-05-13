@@ -1,0 +1,6 @@
+crocoin-qt usr/bin
+share/pixmaps/crocoin32.xpm usr/share/pixmaps
+share/pixmaps/crocoin16.xpm usr/share/pixmaps
+share/pixmaps/crocoin128.png usr/share/pixmaps
+debian/crocoin-qt.desktop usr/share/applications
+debian/crocoin-qt.protocol usr/share/kde4/services/

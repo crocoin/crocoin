@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="94">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <df name="leveldb">
+          <df name="db">
+            <in>builder.cc</in>
+            <in>c.cc</in>
+            <in>db_impl.cc</in>
+            <in>db_iter.cc</in>
+            <in>dbformat.cc</in>
+            <in>filename.cc</in>
+            <in>log_reader.cc</in>
+            <in>log_writer.cc</in>
+            <in>memtable.cc</in>
+            <in>repair.cc</in>
+            <in>table_cache.cc</in>
+            <in>version_edit.cc</in>
+            <in>version_set.cc</in>
+            <in>write_batch.cc</in>
+          </df>
+          <df name="helpers">
+            <df name="memenv">
+              <in>memenv.cc</in>
+            </df>
+          </df>
+          <df name="port">
+            <in>port_posix.cc</in>
+          </df>
+          <df name="table">
+            <in>block.cc</in>
+            <in>block_builder.cc</in>
+            <in>filter_block.cc</in>
+            <in>format.cc</in>
+            <in>iterator.cc</in>
+            <in>merger.cc</in>
+            <in>table.cc</in>
+            <in>table_builder.cc</in>
+            <in>two_level_iterator.cc</in>
+          </df>
+          <df name="util">
+            <in>arena.cc</in>
+            <in>bloom.cc</in>
+            <in>cache.cc</in>
+            <in>coding.cc</in>
+            <in>comparator.cc</in>
+            <in>crc32c.cc</in>
+            <in>env.cc</in>
+            <in>env_posix.cc</in>
+            <in>filter_policy.cc</in>
+            <in>hash.cc</in>
+            <in>histogram.cc</in>
+            <in>logging.cc</in>
+            <in>options.cc</in>
+            <in>status.cc</in>
+          </df>
+        </df>
+        <in>addrman.cpp</in>
+        <in>alert.cpp</in>
+        <in>bitcoinrpc.cpp</in>
+        <in>bloom.cpp</in>
+        <in>checkpoints.cpp</in>
+        <in>crypter.cpp</in>
+        <in>db.cpp</in>
+        <in>hash.cpp</in>
+        <in>init.cpp</in>
+        <in>key.cpp</in>
+        <in>keystore.cpp</in>
+        <in>leveldb.cpp</in>
+        <in>main.cpp</in>
+        <in>net.cpp</in>
+        <in>netbase.cpp</in>
+        <in>noui.cpp</in>
+        <in>protocol.cpp</in>
+        <in>rpcblockchain.cpp</in>
+        <in>rpcdump.cpp</in>
+        <in>rpcmining.cpp</in>
+        <in>rpcnet.cpp</in>
+        <in>rpcrawtransaction.cpp</in>
+        <in>rpcwallet.cpp</in>
+        <in>script.cpp</in>
+        <in>scrypt.cpp</in>
+        <in>sync.cpp</in>
+        <in>txdb.cpp</in>
+        <in>util.cpp</in>
+        <in>version.cpp</in>
+        <in>wallet.cpp</in>
+        <in>walletdb.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>crocoin-qt.pro</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <folder path="0/src/leveldb/helpers">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/helpers/memenv</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/src/leveldb/port">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="src/addrman.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/alert.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/bitcoinrpc.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/bloom.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/checkpoints.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/crypter.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/db.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/hash.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/init.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/key.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/keystore.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/helpers/memenv</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/builder.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/c.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/db_impl.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/db_iter.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/dbformat.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/filename.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/log_reader.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/log_writer.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/memtable.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/repair.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/table_cache.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/version_edit.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/version_set.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/db/write_batch.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/db</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/helpers/memenv/memenv.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/leveldb/port/port_posix.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/leveldb/table/block.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/block_builder.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/filter_block.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/format.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/iterator.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/merger.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/table.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/table_builder.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/table/two_level_iterator.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/table</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/arena.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/bloom.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/cache.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/coding.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/comparator.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/crc32c.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/env.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/env_posix.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/filter_policy.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/hash.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/histogram.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/logging.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/options.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/leveldb/util/status.cc" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/util</pElem>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src/leveldb/port</pElem>
+            <pElem>src/leveldb</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/net.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/netbase.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/noui.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/protocol.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcblockchain.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcdump.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcmining.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcnet.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcrawtransaction.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/rpcwallet.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/json</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/script.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/scrypt.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/sync.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/txdb.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/util.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/version.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/wallet.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/walletdb.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

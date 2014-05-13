@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Crocoin
+Comment=Crocoin P2P Cryptocurrency
+Exec=/usr/bin/crocoin-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/crocoin128.png
+MimeType=x-scheme-handler/bitcoin;
+Categories=Office;
+Name[en_US]=crocoin-qt.desktop
