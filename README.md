@@ -8,7 +8,7 @@ Copyright (c) 2014 CroCoin Developers
 What is CroCoin?
 ----------------
 
-Crocoin is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
+CroCoin is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
  - 2.5 minute block targets
  - subsidy halves in 840k blocks (~4 years)
  - ~84 million total coins
