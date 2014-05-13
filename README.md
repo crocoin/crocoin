@@ -1,13 +1,11 @@
-Crocoin integration/staging tree
-================================
 
 http://www.crocoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
-Copyright (c) 2014 Crocoin Developers
+Copyright (c) 2014 CroCoin Developers
 
-What is Crocoin?
+What is CroCoin?
 ----------------
 
 Crocoin is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
