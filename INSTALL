@@ -1,12 +1,12 @@
-Building Crocoin
+Building CroCoin
 
-See doc/readme-qt.rst for instructions on building Crocoin-Qt,
+See doc/readme-qt.rst for instructions on building CroCoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Crocoin.
+implementation of CroCoin.
 
-See doc/build-*.txt for instructions on building crocoind,
+See doc/build-*.txt for instructions on building CroCoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of Crocoin.
+implementation of CroCoin.
 
 Further build information and documentation is available at
-the official Crocoin website, http://www.crocoin.org
+the official CroCoin website, http://www.crocoin.org
