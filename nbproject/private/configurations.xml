@@ -41,6 +41,8 @@
         <in>moc_walletmodel.cpp</in>
         <in>moc_walletstack.cpp</in>
         <in>moc_walletview.cpp</in>
+        <in>overviewpage.moc</in>
+        <in>rpcconsole.moc</in>
         <in>ui_aboutdialog.h</in>
         <in>ui_addressbookpage.h</in>
         <in>ui_askpassphrasedialog.h</in>

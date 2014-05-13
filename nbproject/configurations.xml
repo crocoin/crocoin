@@ -2,6 +2,45 @@
 <configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="build">
+        <in>moc_aboutdialog.cpp</in>
+        <in>moc_addressbookpage.cpp</in>
+        <in>moc_addresstablemodel.cpp</in>
+        <in>moc_askpassphrasedialog.cpp</in>
+        <in>moc_bitcoinaddressvalidator.cpp</in>
+        <in>moc_bitcoinamountfield.cpp</in>
+        <in>moc_bitcoingui.cpp</in>
+        <in>moc_bitcoinunits.cpp</in>
+        <in>moc_clientmodel.cpp</in>
+        <in>moc_coincontroldialog.cpp</in>
+        <in>moc_coincontroltreewidget.cpp</in>
+        <in>moc_csvmodelwriter.cpp</in>
+        <in>moc_editaddressdialog.cpp</in>
+        <in>moc_guiutil.cpp</in>
+        <in>moc_macnotificationhandler.cpp</in>
+        <in>moc_monitoreddatamapper.cpp</in>
+        <in>moc_notificator.cpp</in>
+        <in>moc_optionsdialog.cpp</in>
+        <in>moc_optionsmodel.cpp</in>
+        <in>moc_overviewpage.cpp</in>
+        <in>moc_paymentserver.cpp</in>
+        <in>moc_qvalidatedlineedit.cpp</in>
+        <in>moc_qvaluecombobox.cpp</in>
+        <in>moc_rpcconsole.cpp</in>
+        <in>moc_sendcoinsdialog.cpp</in>
+        <in>moc_sendcoinsentry.cpp</in>
+        <in>moc_signverifymessagedialog.cpp</in>
+        <in>moc_splashscreen.cpp</in>
+        <in>moc_transactiondesc.cpp</in>
+        <in>moc_transactiondescdialog.cpp</in>
+        <in>moc_transactionfilterproxy.cpp</in>
+        <in>moc_transactiontablemodel.cpp</in>
+        <in>moc_transactionview.cpp</in>
+        <in>moc_walletframe.cpp</in>
+        <in>moc_walletmodel.cpp</in>
+        <in>moc_walletstack.cpp</in>
+        <in>moc_walletview.cpp</in>
+      </df>
       <df name="src">
         <df name="leveldb">
           <df name="db">
@@ -48,6 +87,7 @@
             <in>crc32c.cc</in>
             <in>env.cc</in>
             <in>env_posix.cc</in>
+            <in>env_win.cc</in>
             <in>filter_policy.cc</in>
             <in>hash.cc</in>
             <in>histogram.cc</in>
@@ -55,6 +95,47 @@
             <in>options.cc</in>
             <in>status.cc</in>
           </df>
+        </df>
+        <df name="qt">
+          <in>aboutdialog.cpp</in>
+          <in>addressbookpage.cpp</in>
+          <in>addresstablemodel.cpp</in>
+          <in>askpassphrasedialog.cpp</in>
+          <in>bitcoin.cpp</in>
+          <in>bitcoinaddressvalidator.cpp</in>
+          <in>bitcoinamountfield.cpp</in>
+          <in>bitcoingui.cpp</in>
+          <in>bitcoinstrings.cpp</in>
+          <in>bitcoinunits.cpp</in>
+          <in>clientmodel.cpp</in>
+          <in>coincontroldialog.cpp</in>
+          <in>coincontroltreewidget.cpp</in>
+          <in>csvmodelwriter.cpp</in>
+          <in>editaddressdialog.cpp</in>
+          <in>guiutil.cpp</in>
+          <in>monitoreddatamapper.cpp</in>
+          <in>notificator.cpp</in>
+          <in>optionsdialog.cpp</in>
+          <in>optionsmodel.cpp</in>
+          <in>overviewpage.cpp</in>
+          <in>paymentserver.cpp</in>
+          <in>qvalidatedlineedit.cpp</in>
+          <in>qvaluecombobox.cpp</in>
+          <in>rpcconsole.cpp</in>
+          <in>sendcoinsdialog.cpp</in>
+          <in>sendcoinsentry.cpp</in>
+          <in>signverifymessagedialog.cpp</in>
+          <in>splashscreen.cpp</in>
+          <in>transactiondesc.cpp</in>
+          <in>transactiondescdialog.cpp</in>
+          <in>transactionfilterproxy.cpp</in>
+          <in>transactionrecord.cpp</in>
+          <in>transactiontablemodel.cpp</in>
+          <in>transactionview.cpp</in>
+          <in>walletframe.cpp</in>
+          <in>walletmodel.cpp</in>
+          <in>walletstack.cpp</in>
+          <in>walletview.cpp</in>
         </df>
         <in>addrman.cpp</in>
         <in>alert.cpp</in>
@@ -88,6 +169,7 @@
         <in>wallet.cpp</in>
         <in>walletdb.cpp</in>
       </df>
+      <in>qrc_bitcoin.cpp</in>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -105,10 +187,13 @@
   <confs>
     <conf name="Default" type="0">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-m64 -fstack-protector-all -O2"/>
+      </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
       <makefileType>
@@ -117,268 +202,656 @@
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
           <executablePath></executablePath>
+          <ccTool>
+            <preprocessorList>
+              <Elem>_FORTIFY_SOURCE=2</Elem>
+            </preprocessorList>
+          </ccTool>
         </makeTool>
       </makefileType>
-      <folder path="0/src/leveldb/helpers">
+      <item path="build/moc_aboutdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_addressbookpage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_addresstablemodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_askpassphrasedialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_bitcoinaddressvalidator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_bitcoinamountfield.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_bitcoingui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_bitcoinunits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_clientmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_coincontroldialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_coincontroltreewidget.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_csvmodelwriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_editaddressdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_guiutil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_macnotificationhandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_monitoreddatamapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_notificator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_optionsdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_optionsmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_overviewpage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_paymentserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_qvalidatedlineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_qvaluecombobox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_rpcconsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_sendcoinsdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_sendcoinsentry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_signverifymessagedialog.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_splashscreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_transactiondesc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_transactiondescdialog.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_transactionfilterproxy.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_transactiontablemodel.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="build/moc_transactionview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_walletframe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_walletmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_walletstack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="build/moc_walletview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <folder path="0/build">
         <ccTool>
           <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/helpers/memenv</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </folder>
-      <folder path="0/src/leveldb/port">
+      <folder path="0/src/leveldb">
         <ccTool>
           <incDir>
-            <pElem>src/leveldb/port</pElem>
             <pElem>src/leveldb</pElem>
+            <pElem>src/leveldb/include</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>LEVELDB_PLATFORM_POSIX</Elem>
+            <Elem>OS_LINUX</Elem>
+          </preprocessorList>
         </ccTool>
       </folder>
-      <item path="src/addrman.cpp" ex="false" tool="1" flavor2="0">
+      <folder path="0/src/qt">
         <ccTool>
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/alert.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/bitcoinrpc.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
-      </item>
-      <item path="src/bloom.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      </folder>
+      <item path="qrc_bitcoin.cpp" ex="false" tool="1" flavor2="0">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/checkpoints.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/crypter.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/db.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/hash.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/init.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/key.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/addrman.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/keystore.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/alert.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/leveldb.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/bitcoinrpc.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/helpers/memenv</pElem>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/bloom.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/checkpoints.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/crypter.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/db.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/hash.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/init.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/key.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/keystore.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/leveldb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
       <item path="src/leveldb/db/builder.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/c.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/db_impl.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/db_iter.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/dbformat.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/filename.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/log_reader.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/log_writer.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/memtable.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/repair.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/table_cache.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/version_edit.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/version_set.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/db/write_batch.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/db</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/helpers/memenv/memenv.cc"
             ex="false"
@@ -388,373 +861,778 @@
       <item path="src/leveldb/port/port_posix.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/leveldb/table/block.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/block_builder.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/filter_block.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/format.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/iterator.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/merger.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/table.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/table_builder.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/table/two_level_iterator.cc"
             ex="false"
             tool="1"
             flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/table</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/arena.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/bloom.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/cache.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/coding.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/comparator.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/crc32c.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/env.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/env_posix.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
+      </item>
+      <item path="src/leveldb/util/env_win.cc" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/leveldb/util/filter_policy.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/hash.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/histogram.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/logging.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/options.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
       <item path="src/leveldb/util/status.cc" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src/leveldb/util</pElem>
-            <pElem>src/leveldb/include/leveldb</pElem>
-            <pElem>src/leveldb/port</pElem>
-            <pElem>src/leveldb</pElem>
-          </incDir>
-        </ccTool>
       </item>
-      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/net.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/netbase.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/noui.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/protocol.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/net.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
-          </incDir>
-        </ccTool>
-      </item>
-      <item path="src/rpcblockchain.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
-          <incDir>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/rpcdump.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/netbase.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/rpcmining.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/noui.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/rpcnet.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/protocol.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/rpcrawtransaction.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/qt/aboutdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/addressbookpage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/addresstablemodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/askpassphrasedialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoinaddressvalidator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoinamountfield.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoingui.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoinstrings.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/bitcoinunits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/clientmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/coincontroldialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/coincontroltreewidget.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/csvmodelwriter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/editaddressdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/guiutil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/monitoreddatamapper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/notificator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/optionsdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/optionsmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/overviewpage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/paymentserver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/qvalidatedlineedit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/qvaluecombobox.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/rpcconsole.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/sendcoinsdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/sendcoinsentry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/signverifymessagedialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/splashscreen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactiondesc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactiondescdialog.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactionfilterproxy.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactionrecord.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactiontablemodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/transactionview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/walletframe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/walletmodel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/walletstack.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/qt/walletview.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/rpcblockchain.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/rpcwallet.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/rpcdump.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
             <pElem>src/json</pElem>
-            <pElem>src</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/script.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/rpcmining.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/scrypt.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/rpcnet.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/sync.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/rpcrawtransaction.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/txdb.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/rpcwallet.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
-            <pElem>src/leveldb/include/leveldb</pElem>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/util.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/script.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/version.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/scrypt.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/wallet.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/sync.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
-      <item path="src/walletdb.cpp" ex="false" tool="1" flavor2="0">
-        <ccTool>
+      <item path="src/txdb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
           <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
             <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/util.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/version.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/wallet.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="src/walletdb.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>/usr/share/qt4/mkspecs/linux-g++-64</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>/usr/include/qt4/QtNetwork</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>src</pElem>
+            <pElem>src/json</pElem>
+            <pElem>src/qt</pElem>
+            <pElem>src/leveldb/include</pElem>
+            <pElem>src/leveldb/helpers</pElem>
+            <pElem>build</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BOOST_SPIRIT_THREADSAFE</Elem>
+            <Elem>BOOST_THREAD_USE_LIB</Elem>
+            <Elem>HAVE_BUILD_INFO</Elem>
+            <Elem>LINUX</Elem>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+            <Elem>QT_NETWORK_LIB</Elem>
+            <Elem>QT_NO_DEBUG</Elem>
+            <Elem>QT_SHARED</Elem>
+            <Elem>QT_WEBKIT</Elem>
+            <Elem>USE_IPV6=1</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+            <Elem>_REENTRANT</Elem>
+          </preprocessorList>
         </ccTool>
       </item>
     </conf>
